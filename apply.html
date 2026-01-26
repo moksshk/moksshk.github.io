@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <title>申請評審｜莫氏標準 Mok’s Strategic Standard</title>
+
+  
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="style.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- 導航 -->
+<header>
+  <h1>莫氏標準｜申請評審</h1>
+  <p>
+    本評審僅適合重視信譽、長期合作與風險管理的商戶與個人。
+  </p>
+  <nav>
+    <a href="index.html">公開記錄</a>
+    <a href="standards.html">評審標準</a>
+    <a href="about.html">關於</a>
+    <a href="terms.html">聲明</a>
+  </nav>
+
+  
+</header>
+
+
+  <!-- 內容 -->
+  <main>
+
+    <!-- 說明區 -->
+    <section class="info-box">
+      <h2>評審須知</h2>
+      <ul>
+        <li>本評審屬 <strong>專業判斷服務</strong>，非保證、非背書。</li>
+        <li>評審將基於公開資料、你所提供的資訊，依據<strong>莫氏誠信商業評估標準 MIBAS (Mok's Integrity Business Appraisal Standard)</strong>進行專業判斷。</li>
+        <li>如無嚴重風險或重大負面變化，結果最長有效期為 <strong>12 個月</strong>。</li>
+        <li>評審費用：<strong>HKD 8,800</strong></li>
+      </ul>
+    </section>
+
+    <!-- 表單 -->
+    <form class="form-box">
+
+      <h2>基本資料</h2>
+
+      <label>
+        名稱（個人／公司／商戶）
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        聯絡電郵
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        聯絡電話（選填）
+        <input type="text" name="phone" />
+      </label>
+
+      <label>
+        類型
+        <select name="type" required>
+          <option value="">請選擇</option>
+          <option value="individual">個人</option>
+          <option value="company">公司 / 商戶</option>
+          <option value="freelancer">自由工作者</option>
+          <option value="other">其他</option>
+        </select>
+      </label>
+
+      <h2>評審相關資料</h2>
+
+      <label>
+        主要業務／服務簡介
+        <textarea name="business" rows="4" required></textarea>
+      </label>
+
+      <label>
+        官方網站／社交平台／公開資料連結
+        <textarea name="links" rows="3"></textarea>
+      </label>
+
+      <label>
+        你希望被評審的重點（可選）
+        <textarea name="focus" rows="3"></textarea>
+      </label>
+
+      <h2>聲明與同意</h2>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        我確認所提供的資料屬實，並理解提供虛假或誤導資料可能導致評審撤銷或風險標註。
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        我已閱讀並同意
+        <a href="terms.html" target="_blank">《使用條款》</a>，
+        並理解評審結果僅屬專業參考。
+      </label>
+
+      <div class="submit-box">
+        <button type="submit" class="btn-primary">
+          提交申請
+        </button>
+      </div>
+
+      <p class="form-note">
+        提交申請後，將會收到後續付款與評審安排通知。
+      </p>
+
+    </form>
+
+  </main>
+
+  <!-- Footer -->
+<footer>
+  本記錄為民間市場觀察用途，非官方、非監管機構。<br>
+  莫氏標準保留更新、修訂、移除任何記錄之權利，且不對任何第三方行為負責。<br><br>
+  <a href="terms.html">使用聲明與限制</a>
+
+  <p id="copyright">
+  © <span id="year">2026</span> Mok’s Strategic Standard. All rights reserved.
+</p>
+<p id="translate"></p>
+
+</footer>
+
+<script src="https://cdn.staticfile.net/translate.js/3.1.7/translate.js"></script>
+<script src="js.js"></script>
+</body>
+</html>

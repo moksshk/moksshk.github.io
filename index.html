@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <title>公開記錄｜莫氏標準 Mok’s Strategic Standard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body>
+
+<header>
+  <h1>莫氏標準｜公開記錄</h1>
+  <p>
+    本頁為第三方公開記錄冊，用於顯示已被納入「莫氏標準」之商業帳號或項目。
+    所有記錄僅反映基本存在與可查性，不構成任何推薦、保證或評價。
+  </p>
+  <nav>
+    <a class="active">公開記錄</a>
+    <a href="standards.html" >評審標準</a>
+    <a href="about.html" >關於</a>
+    <a href="terms.html" >聲明</a>
+    
+  </nav>
+
+
+
+
+</header>
+
+<main>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜尋：莫氏編號 / 帳號名稱 / 類型">
+  </div>
+
+  <table id="recordTable">
+    <thead>
+      <tr>
+        <th>莫氏編號</th>
+        <th>帳號 / 項目名稱</th>
+        <th>類型</th>
+        <th>首次記錄</th>
+        <th>狀態</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JS 注入 -->
+    </tbody>
+  </table>
+
+</main>
+
+<footer>
+  本記錄為民間市場觀察用途，非官方、非監管機構。<br>
+  莫氏標準保留更新、修訂、移除任何記錄之權利，且不對任何第三方行為負責。<br><br>
+  <a href="terms.html">使用聲明與限制</a>
+
+  <p id="copyright">
+  © <span id="year">2026</span> Mok’s Strategic Standard. All rights reserved.
+</p>
+<p id="translate"></p>
+
+</footer>
+
+<script>
+  const records = [
+    {
+      id: "MSS-HK-2026-0001",
+      name: "某飲食招聘帳號",
+      type: "招聘",
+      date: "2026-01-18",
+      status: "k",
+      note: "公開招聘紀錄穩定"
+    },
+    {
+      id: "MSS-HK-2026-0002",
+      name: "某批發轉讓項目",
+      type: "生意頂讓",
+      date: "2026-01-19",
+      status: "",
+      note: "觀察中"
+    }
+  ];
+
+  const tbody = document.querySelector("#recordTable tbody");
+  const searchInput = document.getElementById("searchInput");
+
+  function renderTable(data) {
+    tbody.innerHTML = "";
+    data.forEach(r => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.id}</td>
+        <td>${r.name}</td>
+        <td>${r.type}</td>
+        <td>${r.date}</td>
+        <td class="status ${r.status}">
+          ${r.status === "k" ? "有效" : r.status === "n" ? "觀察中" : "終止"}
+        </td>
+        <td>${r.note || "-"}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase();
+    const filtered = records.filter(r =>
+      r.id.toLowerCase().includes(q) ||
+      r.name.toLowerCase().includes(q) ||
+      r.type.toLowerCase().includes(q)
+    );
+    renderTable(filtered);
+  });
+
+  renderTable(records);
+</script>
+
+
+<script src="https://cdn.staticfile.net/translate.js/3.1.7/translate.js"></script>
+<script src="js.js"></script>
+</body>
+</html>

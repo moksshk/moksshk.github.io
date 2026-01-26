@@ -1,0 +1,321 @@
+:root {
+  --black: #0b0b0b;
+  --white: #ffffff;
+  --gold: #bfa36a;
+  --gray: #9a9a9a;
+  --line: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  padding: 40px 24px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+header h1 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+header p {
+  font-size: 13px;
+  color: var(--gray);
+  margin: 0;
+  max-width: 760px;
+  line-height: 1.7;
+}
+
+/* ---------- Navigation ---------- */
+
+nav {
+  float: right;
+  margin-top: 4px;
+}
+
+nav a {
+  margin-left: 16px;
+  color: #777;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--white);
+}
+
+nav a.active {
+  color: var(--gold);
+}
+/* ---------- Main Content ---------- */
+
+main {
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 24px;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+section h2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+section p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #ddd;
+  margin: 0 0 12px 0;
+}
+
+ul {
+  padding-left: 18px;
+  margin: 12px 0 0 0;
+}
+
+li {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+/* ---------- Divider ---------- */
+
+.divider {
+  height: 1px;
+  background: var(--line);
+  margin: 48px 0;
+}
+
+/* ---------- Table (for 公開記錄頁) ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead {
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  text-align: left;
+  font-weight: 500;
+  padding: 12px 8px;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+td {
+  padding: 14px 8px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+tbody tr:hover {
+  background: rgba(255,255,255,0.02);
+}
+
+/* ---------- Status ---------- */
+
+.status {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.status.k {
+  color: #9ad59a;
+}
+
+.status.n {
+  color: #d5c59a;
+}
+
+
+/* ---------- Search Box ---------- */
+
+.search-box {
+  margin-bottom: 24px;
+}
+
+.search-box input {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 14px;
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--white);
+  font-size: 14px;
+}
+
+.search-box input::placeholder {
+  color: #666;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 32px 24px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: #666;
+  line-height: 1.6;
+}
+
+footer a {
+  color: var(--gray);
+  text-decoration: none;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 10px 6px;
+  }
+
+    nav{float:right; margin-top:4px;}
+    nav a{margin-left:16px; color:#777; font-size:12px; text-decoration:none;}
+}
+
+
+
+/* ---------- about ---------- */
+
+.form-box {
+  background: #0f0f0f;
+  border: 1px solid rgba(212, 175, 55, 0.35); /* 金色細線 */
+  padding: 32px 28px;
+  margin-top: 40px;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03),
+              0 12px 40px rgba(0,0,0,0.6);
+  color: #f2f2f2;
+}
+
+.form-box h2 {
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 28px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.form-box h2:first-child {
+  margin-top: 0;
+}
+
+.form-box label {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+  color: #d0d0d0;
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box select,
+.form-box textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-box input:focus,
+.form-box select:focus,
+.form-box textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.25);
+}
+
+
+.form-box .checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  color: #cfcfcf;
+}
+
+.form-box .checkbox input {
+  margin-top: 3px;
+}
+
+
+.form-box a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.form-box a:hover {
+  text-decoration: underline;
+}
+
+
+.submit-box {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 12px 26px;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--gold);
+  color: #000000;
+}
+
+.form-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #9a9a9a;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
