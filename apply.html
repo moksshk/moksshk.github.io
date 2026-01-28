@@ -33,27 +33,100 @@
 </header>
 
 
+
+
+
+
   <!-- 內容 -->
   <main>
 
+<section class="info-box">
+  <h2>評審資料要求</h2>
+
+  <p>
+    為確保評審結果具備基本參考價值，
+    申請者需能提供足以支持其商業身份與實際行為之資料。
+    以下為常見所需資料類型，實際要求將依申請者角色而有所不同。
+  </p>
+
+  <h3>一、基本身份與存在性證明</h3>
+  <ul>
+    <li>公司註冊資料（如：商業登記、公司註冊編號等）</li>
+    <li>或可被合理核實之個人經營證明</li>
+    <li>可對應之官方網站、社交帳號或公開頁面</li>
+  </ul>
+
+  <h3>二、業務或合作關係相關資料</h3>
+  <ul>
+    <li>現行或過往之業務說明、服務內容或招聘資訊</li>
+    <li>可選：合約樣本、合作條款摘要、公開報價方式</li>
+    <li>如涉及招聘或中介行為，需能說明其實際操作模式</li>
+  </ul>
+
+  <h3>三、輔助驗證資料（如適用）</h3>
+  <ul>
+    <li>付款流程說明、發票或收據樣式</li>
+    <li>第三方平台紀錄（如招聘平台、交易平台、社群紀錄）</li>
+    <li>其他可協助理解其運作方式之公開或半公開資料</li>
+  </ul>
+
+  <p class="form-note">
+    無法提供任何合理驗證資料者，
+    將不適合進入評審流程。
+  </p>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- 說明區 -->
-    <section class="info-box">
-      <h2>評審須知</h2>
-      <ul>
-        <li>本評審屬 <strong>專業判斷服務</strong>，非保證、非背書。</li>
-        <li>評審將基於公開資料、你所提供的資訊，依據<strong>莫氏誠信商業評估標準 MIBAS (Mok's Integrity Business Appraisal Standard)</strong>進行專業判斷。</li>
-        <li>如無嚴重風險或重大負面變化，結果最長有效期為 <strong>12 個月</strong>。</li>
-        <li>評審費用：<strong>HKD 8,800</strong></li>
-      </ul>
-    </section>
+<section class="info-box">
+  <h2>評審須知</h2>
+  <ul>
+    <li>本評審屬 <strong>專業判斷服務</strong>，非保證、非背書，亦不構成任何形式的推薦或擔保。</li>
+    <li>評審將基於公開資料及申請者所提供之資訊，依據
+      <strong>莫氏誠信商業評估標準 MIBAS (Mok's Integrity Business Appraisal Standard)</strong>
+      進行獨立專業判斷。
+    </li>
+    <li>莫氏標準可主動邀請具備特定條件或市場代表性的單位進行評審；  
+        任何個人或機構亦可自行提交申請，申請是否進入正式評審流程，將由本標準自行決定。
+    </li>
+    <li>評審費用為 <strong>HKD 8,800</strong>。  
+        評審結果將依據實際提供資料及核實情況作出判斷；  
+        不論評審結果是否通過，該費用一經收取，概不退還。
+    </li>
+    <li>在無嚴重風險或重大負面變化的前提下，評審結果最長有效期為 <strong>12 個月</strong>。</li>
+  </ul>
+</section>
+
 
     <!-- 表單 -->
     <form class="form-box">
 
       <h2>基本資料</h2>
 
+      <label>申請者角色
+<select name="role" required>
+  <option value="">請選擇</option>
+  <option value="company">公司／商業機構</option>
+  <option value="individual">個人經營者／自由職業者</option>
+  <option value="recruitment">招聘／中介／代理角色</option>
+</select>
+</label>
+
+
+
       <label>
-        名稱（個人／公司／商戶）
+        稱謂（個人／公司／商戶）
         <input type="text" name="name" required />
       </label>
 
@@ -67,27 +140,19 @@
         <input type="text" name="phone" />
       </label>
 
-      <label>
-        類型
-        <select name="type" required>
-          <option value="">請選擇</option>
-          <option value="individual">個人</option>
-          <option value="company">公司 / 商戶</option>
-          <option value="freelancer">自由工作者</option>
-          <option value="other">其他</option>
-        </select>
-      </label>
 
       <h2>評審相關資料</h2>
 
-      <label>
-        主要業務／服務簡介
-        <textarea name="business" rows="4" required></textarea>
-      </label>
+<label>業務／行為簡述
+<textarea name="description" rows="4" required
+  placeholder="請簡述你的業務性質、實際操作方式，或招聘／合作行為。"></textarea>
+</label>
 
       <label>
-        官方網站／社交平台／公開資料連結
-        <textarea name="links" rows="3"></textarea>
+        可供核實的公開連結
+        <textarea name="links" rows="3"
+  placeholder="例如：官方網站、社交帳號、招聘帖、平台頁面（可多項）"></textarea>
+作
       </label>
 
       <label>

@@ -79,6 +79,14 @@ section h2 {
   margin-bottom: 12px;
 }
 
+section h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--1f1f1f);
+  margin-bottom: 12px;
+}
+
+
 section p {
   font-size: 13px;
   line-height: 1.8;
