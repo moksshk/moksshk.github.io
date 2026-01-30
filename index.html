@@ -56,11 +56,12 @@
     <thead>
       <tr>
         <th>莫氏編號</th>
-        <th>帳號 / 項目名稱</th>
+        <th>帳號 | 平台</th>
         <th>類型</th>
-        <th>首次記錄</th>
+        <th>記錄日期</th>
         <th>狀態</th>
         <th>備註</th>
+        <th>回報問題</th>
       </tr>
     </thead>
     <tbody>
@@ -86,21 +87,90 @@
   const records = [
     {
       id: "MSS-HK-2026-0001",
-      name: "某飲食招聘帳號",
-      type: "招聘",
+      name: "Something market",
+      type: "招聘/商用服務",
       date: "2026-01-18",
       status: "k",
-      note: "公開招聘紀錄穩定"
+      note: "招聘、銷售記錄穩定",
+      url:"https://www.facebook.com/Somethingmarkethk/"
     },
     {
       id: "MSS-HK-2026-0002",
-      name: "某批發轉讓項目",
+      name: "Iris Leung",
       type: "生意頂讓",
-      date: "2026-01-19",
-      status: "",
-      note: "觀察中"
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100020073573644"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0003",
+      name: "Lok Fung",
+      type: "荃灣冰室招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100047406965895/"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0004",
+      name: "Mimi Chan",
+      type: "會所招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/61575006295576/"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0005",
+      name: "Ronnie Liu",
+      type: "馬鞍山茶餐廳招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100028437644576/"
+    },
+    {
+      id: "MSS-HK-2026-0006",
+      name: "Tom Chan",
+      type: "生意頂讓",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100076432984551"
+    },
+    {
+      id: "MSS-HK-2026-0007",
+      name: "Bosco WU",
+      type: "生意頂讓",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100076322193593/"
+    },
+    {
+      id: "MSS-HK-2026-0008",
+      name: "Cherry So",
+      type: "餐飲業器材出售",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100067984676793/"
+    },
+    {
+      id: "MSS-HK-2026-0009",
+      name: "Wong Karman",
+      type: "承接洗毛巾",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100071719630858/"
     }
   ];
+
 
   const tbody = document.querySelector("#recordTable tbody");
   const searchInput = document.getElementById("searchInput");
@@ -111,13 +181,16 @@
       const tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${r.id}</td>
-        <td>${r.name}</td>
+        <td>
+          <a href="${r.url}" target="_blank" >${r.name}</a></td>
         <td>${r.type}</td>
         <td>${r.date}</td>
         <td class="status ${r.status}">
           ${r.status === "k" ? "有效" : r.status === "n" ? "觀察中" : "終止"}
         </td>
         <td>${r.note || "-"}</td>
+        <td><a href="https://wa.me/85264071181/?text=我要回報問題%0D%0Aid=${r.id}%0D%0Aurl=${r.url}
+" target="_blank" >回報</a></td>
       `;
       tbody.appendChild(tr);
     });
