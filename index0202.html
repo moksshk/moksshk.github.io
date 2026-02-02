@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+<title>莫氏標準｜MSS 商業誠信評審與公開記錄</title>
+
+<meta name="description" content="莫氏標準（MSS）為一套獨立、非背書型的商業評審機制，透過公開可查的記錄形式，建立市場中可長期沿用的信譽與風險判斷門檻。">
+
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mss.hk/">
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  
+  <!-- 主樣式 -->
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+
+<body>
+
+<header>
+  <h1>莫氏標準｜公開記錄</h1>
+  <p>
+    莫氏標準旨在提供一套透明、公開的商業評審機制， 以協助消費者與合作夥伴在面對眾多商業選項時， 能夠更有效率地辨識出具備基本信任基礎的對象， 降低潛在風險。
+    <br><br>
+    本頁為第三方公開記錄冊，用於顯示已被納入「莫氏標準」之商業帳號或項目。
+    所有記錄僅反映基本存在與可查性，不構成任何推薦、保證或評價。
+  </p>
+  <nav>
+    <a class="active">公開記錄</a>
+    <a href="standards.html" >評審標準</a>
+    <a href="about.html" >關於</a>
+    <a href="terms.html" >聲明</a>
+    
+  </nav>
+
+
+
+
+</header>
+
+<main>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="搜尋：莫氏編號 / 帳號名稱 / 類型">
+  </div>
+
+  <table id="recordTable">
+    <thead>
+      <tr>
+        <th>莫氏編號</th>
+        <th>帳號 | 平台</th>
+        <th>類型</th>
+        <th>記錄日期</th>
+        <th>狀態</th>
+        <th>備註</th>
+        <th>回報問題</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- JS 注入 -->
+    </tbody>
+  </table>
+
+</main>
+
+<footer>
+  本記錄為民間市場觀察用途，非官方、非監管機構。<br>
+  莫氏標準保留更新、修訂、移除任何記錄之權利，且不對任何第三方行為負責。<br><br>
+  <a href="terms.html">使用聲明與限制</a>
+
+  <p id="copyright">
+  © <span id="year">2026</span> Mok’s Strategic Standard. All rights reserved.
+</p>
+<p id="translate"></p>
+
+</footer>
+
+<script>
+  const records = [
+    {
+      id: "MSS-HK-2026-0001",
+      name: "Something market",
+      type: "招聘/商用服務",
+      date: "2026-01-18",
+      status: "k",
+      note: "招聘、銷售記錄穩定",
+      url:"https://www.facebook.com/Somethingmarkethk/"
+    },
+    {
+      id: "MSS-HK-2026-0002",
+      name: "Iris Leung",
+      type: "生意頂讓",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100020073573644"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0003",
+      name: "Lok Fung",
+      type: "荃灣冰室招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100047406965895/"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0004",
+      name: "Mimi Chan",
+      type: "會所招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/61575006295576/"
+    }
+    ,
+    {
+      id: "MSS-HK-2026-0005",
+      name: "Ronnie Liu",
+      type: "馬鞍山茶餐廳招聘",
+      date: "2026-01-30",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100028437644576/"
+    },
+    {
+      id: "MSS-HK-2026-0006",
+      name: "Tom Chan",
+      type: "生意頂讓",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100076432984551"
+    },
+    {
+      id: "MSS-HK-2026-0007",
+      name: "Bosco WU",
+      type: "生意頂讓",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100076322193593/"
+    },
+    {
+      id: "MSS-HK-2026-0008",
+      name: "Cherry So",
+      type: "餐飲業器材出售",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100067984676793/"
+    },
+    {
+      id: "MSS-HK-2026-0009",
+      name: "Wong Karman",
+      type: "承接洗毛巾",
+      date: "2026-01-31",
+      status: "n",
+      note: "觀察中",
+      url:"https://www.facebook.com/100071719630858/"
+    }
+  ];
+
+
+  const tbody = document.querySelector("#recordTable tbody");
+  const searchInput = document.getElementById("searchInput");
+
+  function renderTable(data) {
+    tbody.innerHTML = "";
+    data.forEach(r => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${r.id}</td>
+        <td>
+          <a href="${r.url}" target="_blank" >${r.name}</a></td>
+        <td>${r.type}</td>
+        <td>${r.date}</td>
+        <td class="status ${r.status}">
+          ${r.status === "k" ? "有效" : r.status === "n" ? "觀察中" : "終止"}
+        </td>
+        <td>${r.note || "-"}</td>
+        <td><a href="https://wa.me/85264071181/?text=我要回報問題%0D%0Aid=${r.id}%0D%0Aurl=${r.url}
+" target="_blank" >回報</a></td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase();
+    const filtered = records.filter(r =>
+      r.id.toLowerCase().includes(q) ||
+      r.name.toLowerCase().includes(q) ||
+      r.type.toLowerCase().includes(q)
+    );
+    renderTable(filtered);
+  });
+
+  renderTable(records);
+</script>
+
+
+<script src="https://cdn.staticfile.net/translate.js/3.1.7/translate.js"></script>
+<script src="js.js"></script>
+</body>
+</html>
